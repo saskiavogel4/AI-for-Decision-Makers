@@ -47,6 +47,26 @@ Open this repository in Claude Code (terminal, desktop app, or claude.ai/code). 
 
 Type `/agents` in Claude Code to view or edit them.
 
+### Watching the agents talk to each other
+Each deal has a shared thread, `deals/<target>/discussion.md`. Agents post findings,
+challenge each other by name, reply, and concede; the orchestrator routes open questions to
+the right agent for up to three rounds and prints the exchanges in chat as they happen.
+Open the file at any time to read the full conversation.
+
+### Starter prompts (run with `claude --agent corp-dev-orchestrator`)
+1. **Thesis to shortlist:** "Find event-technology companies (registration, lead retrieval,
+   attendee data) GES could buy. Have the deal-sourcing analyst build a long list, then have
+   the event-tech specialist, commercial-dd-customer-voice and devils-advocate debate the
+   top 5 in discussion.md. Show me the exchanges and end with a ranked top 3."
+2. **Synergy fight:** "Evaluate a hypothetical regional contractor in Orlando with $60M
+   revenue and $7M EBITDA. Have the integration-synergy-lead propose synergies, then let the
+   cfo-lens, labor-venue-specialist and devils-advocate challenge them. Run three rounds,
+   show me every exchange, then have the chief of staff write the one-pager."
+3. **Investment committee role-play:** "Take a hypothetical Middle East exhibit-build firm
+   asking 11x EBITDA. The valuation analyst presents; the pe-sponsor-lens and cfo-lens
+   cross-examine; legal-contracts-antitrust flags deal terms. Show the debate and tell me
+   where they still disagree."
+
 ## Using them from the Claude Agent SDK
 The Agent SDK can load the same project agents and `CLAUDE.md` when you enable project
 settings (`setting_sources=["project"]` in Python, `settingSources: ['project']` in

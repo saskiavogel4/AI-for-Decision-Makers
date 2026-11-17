@@ -38,6 +38,21 @@ To run the whole team from one session: `claude --agent corp-dev-orchestrator`.
 - **End every output** with: *Open questions* and *Hand-offs* (which agent should look next and why).
 - Use plain business English for executives; define any jargon on first use.
 
+## Deal room discussion (how agents talk to each other)
+Each deal has a shared conversation log: `deals/<target-slug>/discussion.md`.
+- **Before working**, read `discussion.md` and answer every open message addressed to you.
+- **After writing your memo**, append to `discussion.md` (never edit others' entries):
+  ```
+  ### [round N] <your-agent-name> → <recipient-agent-name(s) | all>
+  **Type:** Finding | Challenge | Question | Reply | Agree | Concede
+  <2–6 sentences. Quote the number or claim you are responding to and its file.>
+  **Needs answer from:** <agent-name> (or "none")
+  ```
+- Challenge other agents directly when your evidence conflicts with theirs (e.g. the
+  `cfo-lens` disputing the `integration-synergy-lead`'s timing). Be specific, cite files,
+  and change your own view when the evidence warrants — say so with **Concede**.
+- Open items stay open until the addressed agent replies or the orchestrator closes them.
+
 ## Confidentiality
 - Deal names, financials and data-room content are confidential and may be material
   non-public information. Do not put them into web searches, external tools or third-party
